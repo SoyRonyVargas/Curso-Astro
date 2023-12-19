@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+---
+
+<Layout title="404 Not Found">
+    <div class="flex flex-col justify-center items-center">
+        <h2 class="tracking-tight font-extrabold text-white text-2xl text-center">
+            Esta página no existe
+        </h2>
+        <img
+            class="rounded-full w-32 h-32 block mt-12"
+            src="https://cdnl.iconscout.com/lottie/premium/thumb/404-error-page-3959260-3299959.gif" 
+            alt=""
+        >
+    </div>
+</Layout>
+
+<style>
+    img
+    {
+        width: 300px;
+        height: 300px;
+        margin-top: 50px;
+        border-radius: 8%;
+    }
+</style>
