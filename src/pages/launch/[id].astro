@@ -1,6 +1,8 @@
 ---
 import{ getLaunchById } from '../../lib/getLaunchById'
 import Layout from '../../layouts/Layout.astro'
+import Button from '../../components/Button';
+
 const { id } = Astro.params
 
 const doc = await getLaunchById(id!);
@@ -18,5 +20,6 @@ if( !doc ) return Astro.redirect("/")
         <p class="text-white text-center text-lg">
             { doc.details }
         </p>
+        <Button client:visible />
     </article>
 </Layout>
