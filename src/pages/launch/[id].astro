@@ -1,0 +1,22 @@
+---
+import{ getLaunchById } from '../../lib/getLaunchById'
+import Layout from '../../layouts/Layout.astro'
+const { id } = Astro.params
+
+const doc = await getLaunchById(id!);
+
+if( !doc ) return Astro.redirect("/")
+
+---
+
+<Layout title={`Lanzamiento ${doc.id}`}>
+    <article class="flex gap-y-4 flex-col">
+        <img class="w-52 h-auto mx-auto" src={doc.links.patch.small} alt="">
+        <h2 class="text-4xl text-center text-white my-5 font-bold">
+            Launch #{doc.flight_number}
+        </h2>
+        <p class="text-white text-center text-lg">
+            { doc.details }
+        </p>
+    </article>
+</Layout>
